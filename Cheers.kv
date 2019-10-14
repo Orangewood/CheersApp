@@ -1,5 +1,16 @@
+ #: include HomeScreen.kv
+ #: include SettingsScreen.kv
+
 <PageLayout>:
 
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen "
+            id: home_screen
+        SettingsScreen:
+            name: "settings_screen"
+            id: settings_screen
     BoxLayout:
         canvas:
             Color:
