@@ -3,11 +3,14 @@ from kivy.app import App
 from kivy.uix.pagelayout import PageLayout
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-#from LoadIcon import *
+from kivy.animation import Animation
+from kivy.uix.carousel import Carousel
+from kivymd.theming import ThemeManager
+
 
 
 #Root widget of application
-class MainRoot(PageLayout):
+class MainRoot():
     """
     The main root of the application, to contain a loading
     icon on launch, a search class for local pubs or bars,
@@ -33,10 +36,12 @@ class SettingsScreen(Screen):
 
 
 class Cheers(App):
+    theme_cls = ThemeManager()
 
+    # def build(self):
+    #     return MainRoot()
+    pass
 
-    def build(self):
-         return MainRoot()
 
 
 

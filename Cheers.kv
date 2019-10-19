@@ -1,38 +1,9 @@
- #: include HomeScreen.kv
- #: include SettingsScreen.kv
+#: import NavigationLayout kivymd.navigationdrawer.NavigationLayout
 
-<PageLayout>:
-
-    ScreenManager:
-        id: screen_manager
-        HomeScreen:
-            name: "home_screen "
-            id: home_screen
-        SettingsScreen:
-            name: "settings_screen"
-            id: settings_screen
-    BoxLayout:
-        canvas:
-            Color:
-                rgba: 216 / 255., 195 / 255., 88 / 255., 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        orientation: "vertical"
-
-        Label:
-            size_hint_y: None
-            height: 1.5 * self.texture_size[1]
-            text: 'page 1'
-
-
-    BoxLayout:
-        orientation: 'vertical'
-        canvas:
-            Color:
-                rgba: 109 / 255., 8 / 255., 57 / 255., 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        Label:
-            text: 'page 2'
+NavigationLayout:
+    MDNavigationDrawer:
+        drawer_logo: "lion.png"
+        NavigationDrawerSubheader:
+            text:'testing1235'
+    Button:
+        text: "w0t"
