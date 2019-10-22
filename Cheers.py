@@ -4,8 +4,8 @@ from kivy.uix.pagelayout import PageLayout
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.animation import Animation
-from kivy.uix.carousel import Carousel
 from kivymd.theming import ThemeManager
+
 
 
 
@@ -36,8 +36,8 @@ class SettingsScreen(Screen):
 
 
 class Cheers(App):
-    theme_cls = ThemeManager()
 
+    theme_cls = ThemeManager()
     # def build(self):
     #     return MainRoot()
     pass
