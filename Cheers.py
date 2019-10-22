@@ -5,6 +5,7 @@ from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.animation import Animation
 from kivymd.theming import ThemeManager
+from kivymd.uix.dialog import MDDialog
 
 
 
@@ -42,7 +43,17 @@ class Cheers(App):
     #     return MainRoot()
     pass
 
+#Make this entire section design in Kivy instead, but for now that'll'do laddy
+    def aboutPopUp(self):
+        about_app = MDDialog(title = "About Cheers!",
+                    text = "Created by Orangewood using KivyMD",
+                    size_hint = [.5,.5],
+                    events_callback = self.close_about_me)
+        about_app.open()
 
+    def close_about_me(self, text_of_selection, popup_widget):
+        print(text_of_selection)
+        print(popup_widget)
 
 
 CheersApp = Cheers()
