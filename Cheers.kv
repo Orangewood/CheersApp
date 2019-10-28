@@ -1,7 +1,9 @@
 #: import NavigationLayout kivymd.uix.navigationdrawer.NavigationLayout
-
+#ContentNavigationDrawer@MDNavigationDrawer
 NavigationLayout:
+    id: nav_layout
     MDNavigationDrawer:
+        id: nav_drawer
         drawer_logo: "beer.mp4"
         NavigationDrawerSubheader:
             text:'Cheers'
@@ -9,13 +11,76 @@ NavigationLayout:
         NavigationDrawerIconButton:
             icon: "glass-mug-variant"
             text: "Local specials"
-
+            on_release:
+                screen_manager.current = 'home_screen'
         NavigationDrawerIconButton:
             icon: "cogs"
             text: "Settings"
-
+            on_release:
+                screen_manager.current = 'settings_screen'
         NavigationDrawerIconButton:
             icon: "barley"
             text: "About"
-    Button:
-        text: "w0t"
+            on_release:
+                app.aboutPopUp()
+
+    ScreenManager:
+        id: screen_manager
+        Screen:
+            name: 'home_screen'
+            MDLabel:
+                text: 'Home Screen'
+        Screen:
+            name: 'settings_screen'
+            MDLabel:
+                text: 'Settings Screen'
+
+    # Button:
+    #     text: "w0t"
+    #     on_release:
+    #         app.root.toggle_nav_drawer()
+
+
+    # HomeScreen:
+    #     name: 'home'
+    #
+    #     FloatLayout:
+    #         canvas:
+    #             Rectangle:
+    #                 size: self.size
+    #                 pos: self.pos
+    #                 #image source for background?
+    #                 source: 'lion.png'
+    #         BoxLayout:
+    #             id: box_top
+    #             orientation: 'vertical'
+    #             size_hint: None, None
+    #             size: self.minimum_size
+    #             pos_hint: {'center_x': .5, 'top': 1}
+    #             padding: dp(5)
+    #
+    #             Label:
+    #                 markup: True
+    #                 text: 'Testing?'
+    #                 size_hint: None, None
+    #                 bold: True
+    #
+
+
+# NavigationLayout:
+#     id: nav_layout
+#
+#     ContentNavigationDrawer:
+#         id: nav_drawer
+#
+#     FloatLayout:
+#         id:float_box
+#
+#         BoxLayout:
+#             id: bot_testing
+#             orientation: 'vertical'
+
+        # MDToolbar:
+        #     id: toolbar
+        #     title: app.title
+        #     text: 'Hello'

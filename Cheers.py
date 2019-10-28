@@ -7,6 +7,7 @@ from kivy.animation import Animation
 from kivymd.theming import ThemeManager
 from kivymd.uix.dialog import MDDialog
 
+from plyer import gps
 
 
 
@@ -30,15 +31,27 @@ class HomeScreen(Screen):
 
 class SettingsScreen(Screen):
     """
-    Settings screen for ideas such as changing location radius,
+    Settings screen for ideas such as changing location status,
     themes, colors, and info about me and the application version.
     """
     pass
 
 
-class Cheers(App):
-
+class Cheers(App, Screen):
     theme_cls = ThemeManager()
+    # theme_cls.primary_palette = "Amber"
+    # theme_cls.accent_palette = "Gray"
+    title = "Cheers"
+
+    #Kivy App initializing method, gps
+    # def on_start(self):
+    #     gps.configure(on_location = self.on_gps_location)
+    #     gps.start()
+    # def on_gps_location(self, **kwargs):
+    #     print(kwargs['lat'])
+
+
+
     # def build(self):
     #     return MainRoot()
     pass
