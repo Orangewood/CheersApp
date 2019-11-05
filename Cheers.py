@@ -39,7 +39,7 @@ class SettingsScreen(Screen):
 
 class Cheers(App, Screen):
     theme_cls = ThemeManager()
-    # theme_cls.primary_palette = "Amber"
+    #theme_cls.primary_palette = "Teal"
     # theme_cls.accent_palette = "Gray"
     title = "Cheers"
 
@@ -50,11 +50,11 @@ class Cheers(App, Screen):
     # def on_gps_location(self, **kwargs):
     #     print(kwargs['lat'])
 
+    def __init__(self,**kwargs):
+        super(Cheers, self).__init__(**kwargs)
 
-
-    # def build(self):
-    #     return MainRoot()
-    pass
+    def build(self):
+        self.screen_manager = ScreenManager()
 
 #Make this entire section design in Kivy instead, but for now that'll'do laddy
     def aboutPopUp(self):
